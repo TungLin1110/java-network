@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<title>Lab08 of CSB541 (Network Programming)</title>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+</HEAD>
+<BODY bgcolor="#ffffff" style="font-family:Times New Roman">
+
+<center><h1>CSB541 Lab08 - Internet Addresses </h1></center>
+
+<!----------------------------------------------------------------------->
+<h2>Lab 08</h2>
+<ol>
+	<li> Download and unzip <a href="lab08.zip">lab08.zip</a>
+	<p>
+	Remind: set paths and check versions
+		(see <a href="../01/mypath.bat">mypath.bat</a>)
+	<p>
+	<li> Compile
+	<a href="Time.java">Time.java</a>,
+	<a href="DictClient.java">DictClient.java</a>,
+	<a href="LowPortScanner2.java">LowPortScanner2.java</a>, and
+	<a href="SocketInfo.java">SocketInfo.java</a> <pre>
+> javac *.java</pre>
+	<p>
+
+	<li> Run
+	<a href="Time.java">Time.java</a> (Example 8-3),
+	<a href="DictClient.java">DictClient.java</a> (Example 8-4),
+	<a href="LowPortScanner2.java">LowPortScanner2.java</a> (Example 8-5) and
+	<a href="SocketInfo.java">SocketInfo.java</a> (Example 8-6)
+	by <a href="lab08run.bat">lab08run.bat</a> <pre>
+> java Time
+> java DictClient computer network programming
+> java LowPortScanner2
+> java SocketInfo www.nuk.edu.tw www.google.com</pre>
+
+	Check the results and make sure you understand what and how they do.
+	<p>
+
+	<li> Develop a new class <b>A1035500Lab08</b> that extends
+	<a href="DictClient.java">DictClient.java</a> (Example 8-4)
+	to read inputs from the keyboard rather than from the command line.
+	<br> Finish the program by input 'quit'.
+	<br>
+	<br>The execution results look like:<pre>
+>javac A1035500Lab08.java
+>java A1035500Lab08
+gold	<------ your input
+gold [gould]
+	:
+	:
+
+lead	<------ your input
+lead [led]
+	:
+	:
+
+quit	<------ your input
+	</pre>
+	<p>
+
+	Upload the output screenshot of the compiling and execution steps.
+</ol>
+
+<!----------------------------------------------------------------------->
+<h2>Homework</h2>
+Study Example 8-5 (<a href="LowPortScanner2.java">LowPortScanner2.java</a>),
+and Example 4-11 (<a href="../04/LookupTask.java">LookupTask.java</a> and
+	<a href="../04/PooledWeblog.java">PooledWeblog.java</a>).
+
+<P>
+Develop a Java program <b>A1035500EX08</b> that
+creates a thread pool (4 threads) to perform low port scanner.
+<p>
+
+Complete the report: <a href="csb541-ex08.doc">csb541-ex08.doc</a>
+
+<!----------------------------------------------------------------------->
+<h2>References</h2>
+
+<ul>
+	<li> <a href="lab08.zip">lab08.zip</a>
+	<P>
+	<li> <a href="http://docs.oracle.com/javase/8/docs/api/java/net/Socket.html">Socket</a>
+	<li> <a href="http://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>
+<p>
+	<li> IETF:
+	<a href="https://tools.ietf.org/html/rfc867">RFC867 (Daytime)</a>
+	/ <a href="https://tools.ietf.org/html/rfc868">RFC868 (Time)</a>
+	/ <a href="https://tools.ietf.org/html/rfc2229">RFC2229 (Dict)</a>
+	/ <a href="https://tools.ietf.org/html/rfc954">RFC954 (Whois)</a>
+	<li> <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">Wiki TCP/UDP ports</a>
+</ul>
+
+<!----------------------------------------------------------------------->
+<hr>
+<a href="../..">Up</a>
+</BODY>
+</HTML>

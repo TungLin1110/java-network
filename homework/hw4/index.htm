@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<title>Lab04 of CSB541 (Network Programming)</title>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+</HEAD>
+<BODY bgcolor="#ffffff" style="font-family:Times New Roman">
+
+<center><h1>CSB541 Lab04 - Internet Addresses </h1></center>
+
+<!----------------------------------------------------------------------->
+<h2>Lab 04</h2>
+<ol>
+	<li> Download and unzip <a href="lab04.zip">lab04.zip</a>
+	<p>
+	Remind: set paths and check versions
+		(see <a href="../01/mypath.bat">mypath.bat</a>)
+	<p>
+	<li> Compile
+	<a href="AllByName.java">AllByName.java</a>,
+	<a href="IPCharacteristics.java">IPCharacteristics.java</a>,
+	<a href="InterfaceLister.java">InterfaceLister.java</a>,
+	<a href="LookupTask.java">LookupTask.java</a>,
+	<a href="PooledWeblog.java">PooledWeblog.java</a>, and
+	<a href="SpamCheck.java">SpamCheck.java</a> <pre>
+> javac *.java</pre>
+	<p>
+
+	<li> Run
+	<a href="InterfaceLister.java">InterfaceLister.java</a> (Example 4-8),
+	<a href="IPCharacteristics.java">IPCharacteristics.java</a> (Example 4-6),
+	<a href="AllByName.java">AllByName.java</a>,
+	<a href="SpamCheck.java">SpamCheck.java</a> (Example 4-9), and
+	<a href="PooledWeblog.java">PooledWeblog.java</a> (Example 4-11)
+	by <a href="lab04run.bat">lab04run.bat</a> <pre>
+> java InterfaceLister
+> java IPCharacteristics www.csie.nuk.edu.tw
+> java AllByName www.csie.nuk.edu.tw www.youtube.com
+> java SpamCheck www.nuk.edu.tw www.google.com
+> java PooledWeblog lab04log.txt</pre>
+	Check the results and make sure you understand what and how they do.
+	<p>
+
+	<li> Develop a new class <b>A1035500Lab04</b> that extends
+	<a href="SpamCheck.java">SpamCheck.java</a> (Example 4-9) to use
+	<b>getAllByName()</b> instead of <b>getByName()</b>.
+	<br>
+	You may refer to <a href="AllByName.java">AllByName.java</a>.
+	<br>The execution results look like:<pre>
+>javac A1035500Lab04.java
+>java A1035500Lab04 <b>www.csie.nuk.edu.tw www.youtube.com</b>
+www.csie.nuk.edu.tw/140.127.208.16 appears legitimate.
+www.youtube.com/64.233.189.190 appears legitimate.
+www.youtube.com/64.233.189.91 appears legitimate.
+www.youtube.com/64.233.189.93 appears legitimate.
+www.youtube.com/64.233.189.136 appears legitimate.</pre>
+	<p>
+
+	Upload the output screenshot of the compiling and execution steps.
+</ol>
+
+<!----------------------------------------------------------------------->
+<h2>Homework</h2>
+Study Example 4-11 (<a href="LookupTask.java">LookupTask.java</a> and
+	<a href="PooledWeblog.java">PooledWeblog.java</a>) that processes logfiles with thread pool.
+
+<P>
+Develop a Java program <b>A1035500EX04</b> that
+<ol>
+<li> creates a thread pool (4 threads)
+<li> reads a file of hostnames (<a href="lab04host.txt">lab04host.txt</a>), like<pre>
+www.csie.nuk.edu.tw
+www.nuk.edu.tw
+www.ntu.edu.tw
+www.ncku.edu.tw
+www.google.com
+www.youtube.com</pre>
+<li> looks up the IP addresses of the hosts
+<li> prints the results to the screen, like<pre>
+> javac A1035500EX4.java <i>LookupTask</i>.java
+> java A1035500EX4 lab04host.txt
+www.csie.nuk.edu.tw	140.127.208.17
+www.nuk.edu.tw	140.127.234.77
+www.ntu.edu.tw	140.127.8.116
+www.ncku.edu.tw	140.116.241.51
+www.google.com	74.125.123.56
+www.youtube.com	64.233.187.93</pre>
+</ol>
+
+Complete the report: <a href="csb541-lab04.doc">csb541-lab04.doc</a>
+
+<!----------------------------------------------------------------------->
+<h2>References</h2>
+
+<ul>
+	<li> <a href="lab04.zip">lab04.zip</a>
+	<P>
+	<li> <a href="http://docs.oracle.com/javase/8/docs/api/java/net/InetAddress.html">InetAddress</a>
+	<li> <a href="http://docs.oracle.com/javase/8/docs/api/java/net/NetworkInterface.html">NetworkInterface</a>
+</ul>
+
+<!----------------------------------------------------------------------->
+<hr>
+<a href="../..">Up</a>
+</BODY>
+</HTML>

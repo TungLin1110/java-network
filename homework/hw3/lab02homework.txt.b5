@@ -1,0 +1,10 @@
+這是CSB541 Lab02的Homework。
+請從鍵盤輸入兩個檔名，第一個為用來輸入的Unicode檔，第二個為用來輸出的Big5新檔。
+程式將讀取該Unicode檔，螢幕顯示內容，轉成Big5並寫檔，最後顯示轉換的總字元數。
+同時回報兩個檔案的大小。
+測試：
+> Lab02 lab02homework.txt A1035500.txt
+………
+………
+Total: 999 Bytes
+> dir *.txt

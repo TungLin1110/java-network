@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<title>Lab09 of CSB541 (Network Programming)</title>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+</HEAD>
+<BODY bgcolor="#ffffff" style="font-family:Times New Roman">
+
+<center><h1>CSB541 Lab09 - Sockets for Servers</h1></center>
+
+<!----------------------------------------------------------------------->
+<h2>Lab 09</h2>
+<ol>
+	<li> Download and unzip <a href="lab09.zip">lab09.zip</a>
+	<p>
+	Remind: set paths and check versions
+		(see <a href="../01/mypath.bat">mypath.bat</a>)
+	<p>
+	<li> Compile
+	<a href="DaytimeServer.java">DaytimeServer.java</a> (Example 9-1),
+	<a href="MultithreadedDaytimeServer.java">MultithreadedDaytimeServer.java</a> (Example 9-3),
+	<a href="EchoServer.java">EchoServer.java</a> (Example 9-5),
+	<a href="RandomPort.java">RandomPort.java</a> (Example 9-9), and
+	<a href="Redirector.java">Redirector.java</a> (Example 9-11)<pre>
+> javac *.java</pre>
+	<p>
+
+	<li> Run them by
+	<a href="lab09run.bat">lab09run.bat</a> <pre>
+> java RandomPort
+
+> java DaytimeServer
+> java MultithreadedDaytimeServer
+> java EchoServer
+> java Redirector http://www.csie.nuk.edu.tw/ 5580</pre>
+
+	Open another command shell to run 'telnet' for server tests.<pre>
+> telnet localhost 5513		// DaytimeServer
+> telnet localhost 5514		// MultithreadedDaytimeServer
+> telnet localhost 5507		// EchoServer
+> telnet localhost 5580		// Redirector</pre>
+	Check the results and make sure you understand what and how they do.
+	<p>
+
+	<li> Develop a new class <b>A1035500Lab09</b> that simplifies
+	<a href="Redirector.java">Redirector.java</a> (Example 9-11)
+	to echo the given URL pathname.
+	<ul>
+	<li> The server port can be given by the command line argument
+	<li> Server name is changed to <font color=red>A1035500's Redirector 1.1</font>
+	<li> Content-type is changed to <font color=red>text/plain</font>
+	<li> The leading '/' of the given URL pathname is omitted, i.e.
+	echo 'computer' for given '/computer'
+		<br> Hint: theFile = theFile.substring(1);
+	</ul>
+	<br>To run:<pre>
+> java A1035500Lab09 5500</pre>
+	To test:<pre>
+> telnet localhost 5500
+GET <font color=red>/computer</font> HTTP/1.0
+
+HTTP/1.0 200 OK
+Date: Tue Mar 29 12:38:42 CST 2016
+Server: <font color=red>A1035500's</font> Redirector 1.1
+Content-type: text/<font color=red>plain</font>
+
+<font color=red>computer</font></pre>
+
+	Upload the output screenshot of the compiling and execution steps.
+</ol>
+
+<!----------------------------------------------------------------------->
+<h2>Homework</h2>
+Develop a Java program <b>A1035500EX09</b>, which
+merges <a href="../08/DictClient.java">DictClient.java</a> (Example 8-4)
+into A1035500Lab09.
+As the redirector of A1035500Lab09 receives a request, it will
+<ul>
+	<li> echo the term (and omit the leading '/' of the given pathname), 
+	<li> send a query for the term to dict.org (port 2628, 'foldoc' database) and
+	<li> output the result
+</ul>
+
+Complete the report: <a href="csb541-ex09.doc">csb541-ex09.doc</a>
+
+<!----------------------------------------------------------------------->
+<h2>References</h2>
+
+<ul>
+	<li> <a href="lab09.zip">lab09.zip</a>
+	<P>
+	<li> Java: <a href="http://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html">ServerSocket</a>,
+	<a href="http://docs.oracle.com/javase/8/docs/api/java/util/logging/package-frame.html">java.util.logging</a> -
+	<a href="http://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html">Logger</a>,
+	<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a>
+
+</ul>
+
+<!----------------------------------------------------------------------->
+<hr>
+<a href="../..">Up</a>
+</BODY>
+</HTML>
